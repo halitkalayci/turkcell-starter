@@ -147,10 +147,34 @@ public class Main {
         int sayi5 = hesapla(10,20);
         int sayi6 = hesapla(20,0);
         int sayi7 = hesapla(30,5);
-        int sayi8 = hesapla(20,20);
+        double sayi8 = hesapla(20,20,30);
 
 
         System.out.println(sayi3);
+
+
+        // Herhangi bir classtan (kalıptan) bir instance (örnek, kalıptan üretilmiş tekil objeler) üretmek için
+        // chemistry => Lesson kalıbından türetilmiş bir örneğe işaret eder.
+        System.out.println("******** OOP Başlangıç **********");
+        Lesson chemistry = new Lesson("Chemistry","Halit",10);
+        chemistry.setName("Chemistry 2");
+        chemistry.setStudentCount(-10);
+
+        /*chemistry.name = "X";
+        chemistry.studentCount=-10;
+        chemistry.teacherName="Halit";*/
+
+        Lesson math = new Lesson("Math","Engin",20);
+        /*math.name="Math";
+        math.studentCount=20;
+        math.teacherName="Engin";*/
+        // null => herhangi bir değere sahip olmayan
+
+        chemistry.startLesson();
+        math.startLesson();
+        // Ödev 1 => Java Modifiers konusunu araştıralım.
+        // Ödev 2 => Java Inheritance,Polymorphism,Abstraction konuları araştılacak ve medium yazılacak.
+        // 8:30 dersteyiz.
     }
 
     // Databaseden müşteri bilgilerini çeken kod
@@ -166,4 +190,15 @@ public class Main {
     {
         return sayi1+sayi2;
     }
+
+    // Method Overloading => Aynı metodun farklı parametre kombinasyonları ile tanımlanabilmesine
+    // olanak sağlar.
+    public static double hesapla(int x,int y, int z)
+    {
+        return x+y+z;
+    }
+
+    // OOP => Object Oriented Programming => Nesne Yönelimli Programlama
+    // Blueprint => Kalıp => Class
+    // Instance => Örnek
 }
