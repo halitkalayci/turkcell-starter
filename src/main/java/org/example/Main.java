@@ -172,9 +172,43 @@ public class Main {
 
         chemistry.startLesson();
         math.startLesson();
-        // Ödev 1 => Java Modifiers konusunu araştıralım.
-        // Ödev 2 => Java Inheritance,Polymorphism,Abstraction konuları araştılacak ve medium yazılacak.
-        // 8:30 dersteyiz.
+
+        System.out.println("*********** OOP 2. Gün *************");
+
+        // Kalıtım => Inheritance
+        // Superclass => kalıtım yapılan class'a denir. => Animal
+        // Subclass => superclass'dan kalıtım yaparak üretilmiş classdır. => Dog,Cat,Bird
+        // OOP içerisinde birden fazla classin ortak özelliklerinin tek tek tanımlanması yerine bir superclassda tanımlanmasını
+        // sağlar.
+        Dog dog = new Dog(); // Animal
+        Cat cat = new Cat(); // Animal
+        Bird bird = new Bird(); // Animal
+        dog.name = "x";
+        cat.name = "y";
+        bird.name = "z";
+
+        dog.breathe();
+        cat.breathe();
+        bird.breathe();
+
+
+        // Polymorphism => Çok çeşitlilik
+
+        Animal animal1 = new Animal();
+        Animal animal2 = new Bird();
+        // superclass - subclass  => Problem YOK
+        Animal animal3 = new Cat();
+        // subclass - superclass => YAPAMIYORUZ..
+        //Bird bird1 = new Animal();
+
+        // Animal => name,breathe
+        // Bird => name,breathe,fly
+
+        Fish fish = new Fish();
+
+
+        // Interface => Arayüz
+
     }
 
     // Databaseden müşteri bilgilerini çeken kod
