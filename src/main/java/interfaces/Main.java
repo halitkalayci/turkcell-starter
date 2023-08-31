@@ -15,16 +15,25 @@ public class Main {
         product2.setId(2);
         product2.setName("Kamera");
 
-        ProductDal db = new InMemoryProductDal();
-        db.add(product);
-        db.add(product2);
+        // İsim dolu mu değil mi?
+        // Fiyat 0'dan büyük mü değil mi?
 
-        List<Product> products = db.getAll();
+        // Aynı üründen daha önce databasede kayıt açılmış mı?
+        // İlgili üründen stok var mı?
 
 
-        for (Product p: products) {
-            System.out.println(p.getName());
-        }
+        // Business Katmanı => İsteği karşılayan taraf ile (konsol, web, desktop) veri erişim katmanı arasında bir güvenlik duvarı
+        // rolü oynar.
+
+        ProductService productService = new ProductServiceImpl(new InMemoryProductDal());
+        productService.add(product);
+        productService.add(product2);
+
+
+        ProductService productService1 = new ProductServiceImpl(new OracleDbProductDal());
+
+        // productService => InMemory
+        // productService1 => Oracle
 
 
         // InMemory => Ram'de

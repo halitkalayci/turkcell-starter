@@ -18,7 +18,6 @@ public class InMemoryProductDal implements ProductDal{
     // DAL,DAO => CRUD işlemlerini kodlarız..
     private List<Product> productList = new ArrayList<>();
 
-
     @Override
     public void add(Product product) {
         productList.add(product);
